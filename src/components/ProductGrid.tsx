@@ -10,7 +10,7 @@ export default async function ProductGrid() {
     <section className={styles.productSection}>
       <h2 className={styles.sectionTitle}>Featured Collections</h2>
       <div className={styles.grid}>
-        {products.map((product) => (
+        {products.map((product: any) => (
           <div key={product.id} className={styles.card}>
             <div className={styles.imageWrapper}>
               {product.isNew && <span className={styles.badge}>New</span>}
