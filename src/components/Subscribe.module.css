@@ -1,0 +1,112 @@
+.section {
+  width: 100%;
+}
+
+.shopBar {
+  background-color: #9C9B86;
+  width: 100%;
+}
+
+.shopBarInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.shopButton {
+  background-color: #434343;
+  color: #FFFFFF;
+  border: none;
+  padding: 0.8rem 2.5rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.shopButton:hover {
+  background-color: #2A2A2A;
+}
+
+.subscribeBg {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url('/hero_banner.png');
+  background-size: cover;
+  background-position: center;
+  padding: 8rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  text-align: center;
+  max-width: 600px;
+}
+
+.title {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 2rem;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.input {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  border: none;
+  background-color: rgba(240, 237, 230, 0.85);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: #333;
+  outline: none;
+}
+
+.input::placeholder {
+  color: #888;
+}
+
+.subscribeButton {
+  background-color: #434343;
+  color: #FFFFFF;
+  border: none;
+  padding: 0 2rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.subscribeButton:hover {
+  background-color: #2A2A2A;
+}
+
+@media (max-width: 600px) {
+  .form {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .subscribeButton {
+    padding: 1rem;
+  }
+}
