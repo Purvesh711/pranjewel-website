@@ -12,7 +12,7 @@ const fallbackProducts = [
 ];
 
 export default async function ProductGrid() {
-  let products = [];
+  let products: any[] = [];
   try {
     products = await prisma.product.findMany();
   } catch (err) {
