@@ -83,8 +83,8 @@ export default function CheckoutForm() {
             <input type="text" placeholder="Apartment, suite, etc. (optional)" className={styles.input} />
             <div className={styles.inputRow}>
               <input type="text" placeholder="City" required className={styles.input} />
-              <select className={styles.select} required>
-                <option value="" disabled selected>State</option>
+              <select className={styles.select} required defaultValue="">
+                <option value="" disabled>State</option>
                 <option value="MH">Maharashtra</option>
                 <option value="DL">Delhi</option>
                 <option value="KA">Karnataka</option>
