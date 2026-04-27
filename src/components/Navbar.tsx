@@ -34,16 +34,16 @@ export default function Navbar() {
       </div>
       <div className={`${styles.navContainer} ${isMobileMenuOpen ? styles.mobileOpen : ''}`}>
         <ul className={styles.navLinks}>
-          <li><Link href="/" onClick={closeMenu}>Gifts Under ₹10,000</Link></li>
-          <li><Link href="/" onClick={closeMenu}>Woman</Link></li>
-          <li><Link href="/" onClick={closeMenu}>Man</Link></li>
-          <li><Link href="/" onClick={closeMenu}>Italian Jewellery</Link></li>
-          <li><Link href="/" onClick={closeMenu}>Shop By Price</Link></li>
+          <li><Link href="/gifts-under-10k" onClick={closeMenu}>Gifts Under ₹10,000</Link></li>
+          <li><Link href="/woman" onClick={closeMenu}>Woman</Link></li>
+          <li><Link href="/man" onClick={closeMenu}>Man</Link></li>
+          <li><Link href="/italian-jewellery" onClick={closeMenu}>Italian Jewellery</Link></li>
+          <li><Link href="/shop-by-price" onClick={closeMenu}>Shop By Price</Link></li>
         </ul>
         <ul className={styles.navLinksSecondary}>
-          <li><Link href="/" onClick={closeMenu}>Support</Link></li>
-          <li><Link href="/" onClick={closeMenu}>Stores</Link></li>
-          <li><Link href="/" onClick={closeMenu}>Blogs</Link></li>
+          <li><Link href="/support" onClick={closeMenu}>Support</Link></li>
+          <li><Link href="/stores" onClick={closeMenu}>Stores</Link></li>
+          <li><Link href="/blogs" onClick={closeMenu}>Blogs</Link></li>
         </ul>
       </div>
       <div className={styles.actions}>
