@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
 export interface CartItem {
   id: string; // unique cart item id (usually product.id + metal + size)
@@ -28,6 +28,27 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 export const CartProvider = ({ children }: { children: ReactNode }) => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isInitialized, setIsInitialized] = useState(false);
+
+  // Load from localStorage on mount
+  useEffect(() => {
+    const savedCart = localStorage.getItem('pranjewel_cart');
+    if (savedCart) {
+      try {
+        setCartItems(JSON.parse(savedCart));
+      } catch (e) {
+        console.error("Failed to parse cart from local storage");
+      }
+    }
+    setIsInitialized(true);
+  }, []);
+
+  // Save to localStorage whenever cartItems changes
+  useEffect(() => {
+    if (isInitialized) {
+      localStorage.setItem('pranjewel_cart', JSON.stringify(cartItems));
+    }
+  }, [cartItems, isInitialized]);
 
   const addToCart = (item: Omit<CartItem, 'id'>) => {
     const cartItemId = `${item.productId}-${item.metal}-${item.size}`;
