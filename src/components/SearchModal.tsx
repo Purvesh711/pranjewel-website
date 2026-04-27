@@ -65,6 +65,13 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
     <div className={styles.overlay}>
       <div className={styles.modal}>
         <div className={styles.header}>
+          <button onClick={onClose} className={styles.backBtn} aria-label="Go back">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+          </button>
+          
           <div className={styles.searchBar}>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="11" cy="11" r="8"></circle>
