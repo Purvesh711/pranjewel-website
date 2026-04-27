@@ -1,11 +1,13 @@
 'use client';
 
 import React from 'react';
+import { useRouter } from 'next/navigation';
 import { useCart } from '@/context/CartContext';
 import styles from './CartDrawer.module.css';
 
 export default function CartDrawer() {
   const { isCartOpen, setIsCartOpen, cartItems, removeFromCart, updateQuantity, cartTotal } = useCart();
+  const router = useRouter();
 
   if (!isCartOpen) return null;
 
@@ -75,7 +77,13 @@ export default function CartDrawer() {
               <span className={styles.subtotalAmount}>₹{cartTotal.toLocaleString('en-IN')}</span>
             </div>
             <p className={styles.taxesInfo}>Taxes and shipping calculated at checkout</p>
-            <button className={styles.checkoutBtn}>
+            <button 
+              className={styles.checkoutBtn}
+              onClick={() => {
+                setIsCartOpen(false);
+                router.push('/checkout');
+              }}
+            >
               Proceed to Checkout
             </button>
           </div>
