@@ -25,7 +25,7 @@ export async function GET(request: Request) {
   }
 
   try {
-    const lowerQ = q.toLowerCase();
+    const lowerQ = q.toLowerCase().trim();
     
     // Fetch all products (safe for small catalogs) to ensure case-insensitive search on SQLite
     const allProducts = await prisma.product.findMany();
