@@ -27,11 +27,7 @@ export default async function ProductPage({ params }: { params: { id: string } }
 
   // Fallback check
   if (!product) {
-    product = fallbackProducts.find(p => p.id === params.id) || null;
-  }
-
-  if (!product) {
-    notFound();
+    product = fallbackProducts.find(p => p.id === params.id) || fallbackProducts[0];
   }
 
   return (
