@@ -1,24 +1,48 @@
+'use client';
+
+import { useState } from 'react';
 import Link from 'next/link';
 import styles from './Navbar.module.css';
 
 export default function Navbar() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+  const closeMenu = () => setIsMobileMenuOpen(false);
+
   return (
     <nav className={styles.navbar}>
-      <div className={styles.logo}>
-        <Link href="/">PranJewel</Link>
+      <div className={styles.mobileHeader}>
+        <button className={styles.hamburger} aria-label="Menu" onClick={toggleMenu}>
+          {isMobileMenuOpen ? (
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          ) : (
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          )}
+        </button>
+        <div className={styles.logo}>
+          <Link href="/" onClick={closeMenu}>PranJewel</Link>
+        </div>
       </div>
-      <div className={styles.navContainer}>
+      <div className={`${styles.navContainer} ${isMobileMenuOpen ? styles.mobileOpen : ''}`}>
         <ul className={styles.navLinks}>
-          <li><Link href="/">Gifts Under ₹10,000</Link></li>
-          <li><Link href="/">Woman</Link></li>
-          <li><Link href="/">Man</Link></li>
-          <li><Link href="/">Italian Jewellery</Link></li>
-          <li><Link href="/">Shop By Price</Link></li>
+          <li><Link href="/" onClick={closeMenu}>Gifts Under ₹10,000</Link></li>
+          <li><Link href="/" onClick={closeMenu}>Woman</Link></li>
+          <li><Link href="/" onClick={closeMenu}>Man</Link></li>
+          <li><Link href="/" onClick={closeMenu}>Italian Jewellery</Link></li>
+          <li><Link href="/" onClick={closeMenu}>Shop By Price</Link></li>
         </ul>
         <ul className={styles.navLinksSecondary}>
-          <li><Link href="/">Support</Link></li>
-          <li><Link href="/">Stores</Link></li>
-          <li><Link href="/">Blogs</Link></li>
+          <li><Link href="/" onClick={closeMenu}>Support</Link></li>
+          <li><Link href="/" onClick={closeMenu}>Stores</Link></li>
+          <li><Link href="/" onClick={closeMenu}>Blogs</Link></li>
         </ul>
       </div>
       <div className={styles.actions}>

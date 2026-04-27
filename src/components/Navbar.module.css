@@ -21,6 +21,21 @@
   letter-spacing: 1px;
 }
 
+.mobileHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-main);
+  padding: 4px;
+}
+
 .navContainer {
   display: flex;
   flex-direction: column;
@@ -69,7 +84,41 @@
   .navbar {
     padding: var(--spacing-sm);
   }
-  .navLinks {
+  .hamburger {
+    display: flex;
+    align-items: center;
+  }
+  .logo {
+    font-size: 1.5rem;
+  }
+  .navContainer {
     display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(234, 234, 234, 0.5);
+    padding: 1.5rem;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navContainer.mobileOpen {
+    display: flex;
+  }
+  .navLinks, .navLinksSecondary {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.2rem;
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+  .navLinks a, .navLinksSecondary a {
+    font-size: 1.1rem;
+    display: block;
+    width: 100%;
   }
 }

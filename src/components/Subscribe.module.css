@@ -109,4 +109,10 @@
   .subscribeButton {
     padding: 1rem;
   }
+  .subscribeBg {
+    padding: 4rem 1rem;
+  }
+  .title {
+    font-size: 1rem;
+  }
 }

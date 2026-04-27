@@ -60,3 +60,16 @@
 .cta:hover {
   background-color: var(--color-primary-dark);
 }
+
+@media (max-width: 768px) {
+  .hero {
+    height: 60vh;
+    padding: var(--spacing-md);
+  }
+  .title {
+    font-size: 2.2rem;
+  }
+  .subtitle {
+    font-size: 0.95rem;
+  }
+}
