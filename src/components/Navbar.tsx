@@ -13,7 +13,8 @@ export default function Navbar() {
   const closeMenu = () => setIsMobileMenuOpen(false);
 
   return (
-    <nav className={styles.navbar}>
+    <>
+      <nav className={styles.navbar}>
       <div className={styles.hamburgerContainer}>
         <button className={styles.hamburger} aria-label="Menu" onClick={toggleMenu}>
           {isMobileMenuOpen ? (
@@ -69,7 +70,8 @@ export default function Navbar() {
           </svg>
         </button>
       </div>
+      </nav>
       <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
-    </nav>
+    </>
   );
 }
