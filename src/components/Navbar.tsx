@@ -3,9 +3,11 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import styles from './Navbar.module.css';
+import SearchModal from './SearchModal';
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
   const closeMenu = () => setIsMobileMenuOpen(false);
@@ -47,7 +49,7 @@ export default function Navbar() {
         </ul>
       </div>
       <div className={styles.actions}>
-        <button className={styles.iconButton} aria-label="Search">
+        <button className={styles.iconButton} aria-label="Search" onClick={() => setIsSearchOpen(true)}>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
             <circle cx="11" cy="11" r="8"></circle>
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
@@ -67,6 +69,7 @@ export default function Navbar() {
           </svg>
         </button>
       </div>
+      <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
     </nav>
   );
 }
